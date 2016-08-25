@@ -1,0 +1,19 @@
+collections effectiveness:
+
+10K (in ns)   add       get       remove    contains  populate    it.add    it.remove 
+ArrayList     2 684     978       7 642     77 585    304 126      9 157     1 089     
+LinkedList    34 283    23 431    26 802    66 687    381 574      5 944     955       
+HashSet       2 814     ---       876       438       494 737      ---       ---       
+TreeSet       8 313     ---       11 344    7 673     1 547 581    ---       ---       
+
+100K (in ns)  add       get       remove    contains  populate    it.add    it.remove 
+ArrayList     21 027    110       71 562    46 101    1 537 400    27 805    505       
+LinkedList    10 298    6 497     6 367     12 880    2 445 323    1 125     1 330     
+HashSet       513       ---       955       722       3 090 918    ---       ---       
+TreeSet       1 578     ---       4 642     777       17 129 428   ---       ---       
+
+1000K (in ns) add       get       remove    contains  populate    it.add    it.remove 
+ArrayList     607 455   347       909 059   29 929    13 288 509   746 139   746       
+LinkedList    4 997     6 043     5 992     49 235    35 489 178   860       378       
+HashSet       505       ---       1 539     603       33 922 033   ---       ---       
+TreeSet       1 164     ---       3 860     639       217 361 791  ---       ---       
