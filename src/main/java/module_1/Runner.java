@@ -88,7 +88,8 @@ public class Runner {
         FileWriter writer = new java.io.FileWriter(file.getAbsolutePath());
         BufferedWriter bw = new BufferedWriter(writer);
 
-        bw.write(header10k + results10k + "\n" + header100k + results100k + "\n" + header1000k + results1000k);
+        bw.write("collections effectiveness:\n\n" + header10k + results10k + "\n"
+                + header100k + results100k + "\n" + header1000k + results1000k);
         bw.close();
     }
 }
