@@ -1,0 +1,148 @@
+package module_1;
+
+import java.util.*;
+
+public class ListUtils {
+    private List<Integer> list;
+    private int size;
+
+    public ListUtils(int size, ArrayList<Integer> arrayList) {
+        this.size = size;
+        this.list = arrayList;
+    }
+
+    public ListUtils(int size, LinkedList<Integer> linkedList) {
+        this.size = size;
+        this.list = linkedList;
+    }
+
+    private long start;
+    private long finish;
+    private long timeConsumed;
+
+    private long sumPopulate = 0;
+    private final int REPETITIONS = 100;
+
+    private Random random = new Random(100);
+
+    public void populate() {
+        for (int i = 0; i < REPETITIONS; i++) {
+            list.clear();
+            start = System.nanoTime();
+
+            for (int j = 0; j < size; j++) {
+                list.add(j, j);
+            }
+
+            finish = System.nanoTime();
+            timeConsumed = finish - start;
+
+            sumPopulate = sumPopulate + timeConsumed;
+        }
+    }
+
+    private long calcPopulate() {
+        return sumPopulate / REPETITIONS;
+    }
+
+    private long calcAdd() {
+        long sum = 0;
+
+        for (int i = 0; i < REPETITIONS; i++) {
+            start = System.nanoTime();
+            list.add(i * random.nextInt(100), 666);
+            finish = System.nanoTime();
+
+            timeConsumed = finish - start;
+            sum = sum + timeConsumed;
+        }
+
+        return sum / REPETITIONS;
+    }
+
+    private long calcGet() {
+        long sum = 0;
+
+        for (int i = 0; i < REPETITIONS; i++) {
+            start = System.nanoTime();
+            list.get(i * random.nextInt(100));
+            finish = System.nanoTime();
+
+            timeConsumed = finish - start;
+            sum = sum + timeConsumed;
+
+        }
+
+        return sum / REPETITIONS;
+    }
+
+    private long calcContains() {
+        long sum = 0;
+
+        for (int i = 0; i < REPETITIONS; i++) {
+            start = System.nanoTime();
+            list.contains(i * random.nextInt(100));
+            finish = System.nanoTime();
+
+            timeConsumed = finish - start;
+            sum = sum + timeConsumed;
+        }
+
+        return sum / REPETITIONS;
+    }
+
+    private long calcIterAdd() {
+        long sum = 0;
+
+        for (int i = 0; i < REPETITIONS; i++) {
+            start = System.nanoTime();
+            list.listIterator().add(i * random.nextInt(100));
+            finish = System.nanoTime();
+
+            timeConsumed = finish - start;
+            sum = sum + timeConsumed;
+        }
+
+        return sum / REPETITIONS;
+    }
+
+    private long calcRemove() {
+        long sum = 0;
+
+        for (int i = 0; i < REPETITIONS; i++) {
+            start = System.nanoTime();
+            list.remove(i * random.nextInt(100));
+            finish = System.nanoTime();
+
+            timeConsumed = finish - start;
+            sum = sum + timeConsumed;
+        }
+
+        return sum / REPETITIONS;
+    }
+
+    private long calcIterRemove() {
+        long sum = 0;
+
+        for (int i = REPETITIONS * 5; i < REPETITIONS * 6; i++) {
+            start = System.nanoTime();
+
+            Iterator<Integer> iter = list.listIterator();
+            if (iter.next() % 2 == 0) {
+                iter.remove();
+            }
+
+            finish = System.nanoTime();
+
+            timeConsumed = finish - start;
+            sum = sum + timeConsumed;
+        }
+
+        return sum / REPETITIONS;
+    }
+
+    public String getResults() {
+        return String.format("%-,10d%-,10d%-,10d%-,10d%-,13d%-,10d%-,10d%n", calcAdd(), calcGet(),
+                calcRemove(), calcContains(), calcPopulate(), calcIterAdd(), calcIterRemove());
+    }
+}
