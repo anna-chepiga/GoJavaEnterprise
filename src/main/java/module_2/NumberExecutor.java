@@ -47,6 +47,10 @@ public class NumberExecutor implements Executor<Number> {
         executeCalled = true;
     }
 
+    public List<Task<? extends Number>> getTasks() {
+        return tasks;
+    }
+
     @Override
     public List<? extends Number> getValidResults() throws ExecuteNotCalledException {
         if (!executeCalled) throw new ExecuteNotCalledException("execute method not called");
