@@ -16,10 +16,6 @@ public class ListUtils {
         this.list = linkedList;
     }
 
-    private long start;
-    private long finish;
-    private long timeConsumed;
-
     private long sumPopulate = 0;
     private final int REPETITIONS = 100;
 
@@ -28,14 +24,14 @@ public class ListUtils {
     public void populate() {
         for (int i = 0; i < REPETITIONS; i++) {
             list.clear();
-            start = System.nanoTime();
+            long start = System.nanoTime();
 
             for (int j = 0; j < size; j++) {
                 list.add(j, j);
             }
 
-            finish = System.nanoTime();
-            timeConsumed = finish - start;
+            long finish = System.nanoTime();
+            long timeConsumed = finish - start;
 
             sumPopulate = sumPopulate + timeConsumed;
         }
@@ -49,11 +45,11 @@ public class ListUtils {
         long sum = 0;
 
         for (int i = 0; i < REPETITIONS; i++) {
-            start = System.nanoTime();
+            long start = System.nanoTime();
             list.add(i * random.nextInt(100), 666);
-            finish = System.nanoTime();
+            long finish = System.nanoTime();
 
-            timeConsumed = finish - start;
+            long timeConsumed = finish - start;
             sum = sum + timeConsumed;
         }
 
@@ -64,11 +60,11 @@ public class ListUtils {
         long sum = 0;
 
         for (int i = 0; i < REPETITIONS; i++) {
-            start = System.nanoTime();
+            long start = System.nanoTime();
             list.get(i * random.nextInt(100));
-            finish = System.nanoTime();
+            long finish = System.nanoTime();
 
-            timeConsumed = finish - start;
+            long timeConsumed = finish - start;
             sum = sum + timeConsumed;
 
         }
@@ -80,11 +76,11 @@ public class ListUtils {
         long sum = 0;
 
         for (int i = 0; i < REPETITIONS; i++) {
-            start = System.nanoTime();
+            long start = System.nanoTime();
             list.contains(i * random.nextInt(100));
-            finish = System.nanoTime();
+            long finish = System.nanoTime();
 
-            timeConsumed = finish - start;
+            long timeConsumed = finish - start;
             sum = sum + timeConsumed;
         }
 
@@ -95,11 +91,11 @@ public class ListUtils {
         long sum = 0;
 
         for (int i = 0; i < REPETITIONS; i++) {
-            start = System.nanoTime();
+            long start = System.nanoTime();
             list.listIterator().add(i * random.nextInt(100));
-            finish = System.nanoTime();
+            long finish = System.nanoTime();
 
-            timeConsumed = finish - start;
+            long timeConsumed = finish - start;
             sum = sum + timeConsumed;
         }
 
@@ -110,11 +106,11 @@ public class ListUtils {
         long sum = 0;
 
         for (int i = 0; i < REPETITIONS; i++) {
-            start = System.nanoTime();
+            long start = System.nanoTime();
             list.remove(i * random.nextInt(100));
-            finish = System.nanoTime();
+            long finish = System.nanoTime();
 
-            timeConsumed = finish - start;
+            long timeConsumed = finish - start;
             sum = sum + timeConsumed;
         }
 
@@ -125,16 +121,16 @@ public class ListUtils {
         long sum = 0;
 
         for (int i = REPETITIONS * 5; i < REPETITIONS * 6; i++) {
-            start = System.nanoTime();
+            long start = System.nanoTime();
 
             Iterator<Integer> iter = list.listIterator();
             if (iter.next() % 2 == 0) {
                 iter.remove();
             }
 
-            finish = System.nanoTime();
+            long finish = System.nanoTime();
 
-            timeConsumed = finish - start;
+            long timeConsumed = finish - start;
             sum = sum + timeConsumed;
         }
 

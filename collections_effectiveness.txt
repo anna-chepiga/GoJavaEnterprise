@@ -1,19 +1,19 @@
 collections effectiveness:
 
 10K (in ns)   add       get       remove    contains  populate    it.add    it.remove 
-ArrayList     2 684     978       7 642     77 585    304 126      9 157     1 089     
-LinkedList    34 283    23 431    26 802    66 687    381 574      5 944     955       
-HashSet       2 814     ---       876       438       494 737      ---       ---       
-TreeSet       8 313     ---       11 344    7 673     1 547 581    ---       ---       
+ArrayList     3 027     1 511     8 072     71 826    397 242      275 658   1 097     
+LinkedList    40 212    23 194    13 302    66 075    347 279      111 999   655       
+HashSet       2 443     ---       1 132     678       491 000      ---       ---       
+TreeSet       6 789     ---       8 368     2 715     1 309 093    ---       ---       
 
 100K (in ns)  add       get       remove    contains  populate    it.add    it.remove 
-ArrayList     21 027    110       71 562    46 101    1 537 400    27 805    505       
-LinkedList    10 298    6 497     6 367     12 880    2 445 323    1 125     1 330     
-HashSet       513       ---       955       722       3 090 918    ---       ---       
-TreeSet       1 578     ---       4 642     777       17 129 428   ---       ---       
+ArrayList     19 105    201       101 980   46 085    1 422 715    26 747    580       
+LinkedList    6 619     6 272     6 177     13 065    1 922 357    1 105     967       
+HashSet       1 823     ---       1 259     722       2 340 334    ---       ---       
+TreeSet       1 259     ---       5 151     1 792     14 836 524   ---       ---       
 
 1000K (in ns) add       get       remove    contains  populate    it.add    it.remove 
-ArrayList     607 455   347       909 059   29 929    13 288 509   746 139   746       
-LinkedList    4 997     6 043     5 992     49 235    35 489 178   860       378       
-HashSet       505       ---       1 539     603       33 922 033   ---       ---       
-TreeSet       1 164     ---       3 860     639       217 361 791  ---       ---       
+ArrayList     573 145   351       790 343   37 413    11 605 195   876 353   544       
+LinkedList    5 182     5 443     5 660     49 121    33 072 576   1 156     375       
+HashSet       840       ---       1 022     607       34 673 201   ---       ---       
+TreeSet       1 125     ---       4 219     714       220 495 188  ---       ---       

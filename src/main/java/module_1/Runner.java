@@ -5,19 +5,19 @@ import java.util.*;
 
 public class Runner {
     public static void main(String[] args) throws IOException {
-        ListUtils array10k = new ListUtils(10_000, new ArrayList<Integer>());
+        ListUtils array10k = new ListUtils(10_000, new ArrayList<>());
         array10k.populate();
         String arrayFor10k = array10k.getResults();
 
-        ListUtils linked10k = new ListUtils(10_000, new LinkedList<Integer>());
+        ListUtils linked10k = new ListUtils(10_000, new LinkedList<>());
         linked10k.populate();
         String linkedFor10k = linked10k.getResults();
 
-        SetUtils hash10K = new SetUtils(10_000, new HashSet<Integer>());
+        SetUtils hash10K = new SetUtils(10_000, new HashSet<>());
         hash10K.populate();
         String hashFor10k = hash10K.getResults();
 
-        SetUtils tree10K = new SetUtils(10_000, new TreeSet<Integer>());
+        SetUtils tree10K = new SetUtils(10_000, new TreeSet<>());
         tree10K.populate();
         String treeFor10k = tree10K.getResults();
 
@@ -30,19 +30,19 @@ public class Runner {
         System.out.print(header10k);
         System.out.println(results10k);
 
-        ListUtils array100k = new ListUtils(100_000, new ArrayList<Integer>());
+        ListUtils array100k = new ListUtils(100_000, new ArrayList<>());
         array100k.populate();
         String arrayFor100k = array100k.getResults();
 
-        ListUtils linked100k = new ListUtils(100_000, new LinkedList<Integer>());
+        ListUtils linked100k = new ListUtils(100_000, new LinkedList<>());
         linked100k.populate();
         String linkedFor100k = linked100k.getResults();
 
-        SetUtils hash100K = new SetUtils(100_000, new HashSet<Integer>());
+        SetUtils hash100K = new SetUtils(100_000, new HashSet<>());
         hash100K.populate();
         String hashFor100k = hash100K.getResults();
 
-        SetUtils tree100K = new SetUtils(100_000, new TreeSet<Integer>());
+        SetUtils tree100K = new SetUtils(100_000, new TreeSet<>());
         tree100K.populate();
         String treeFor100k = tree100K.getResults();
 
@@ -54,19 +54,19 @@ public class Runner {
         System.out.print(header100k);
         System.out.println(results100k);
 
-        ListUtils array1000k = new ListUtils(1_000_000, new ArrayList<Integer>());
+        ListUtils array1000k = new ListUtils(1_000_000, new ArrayList<>());
         array1000k.populate();
         String arrayFor1000k = array1000k.getResults();
 
-        ListUtils linked1000k = new ListUtils(1_000_000, new LinkedList<Integer>());
+        ListUtils linked1000k = new ListUtils(1_000_000, new LinkedList<>());
         linked1000k.populate();
         String linkedFor1000k = linked1000k.getResults();
 
-        SetUtils hash1000K = new SetUtils(1_000_000, new HashSet<Integer>());
+        SetUtils hash1000K = new SetUtils(1_000_000, new HashSet<>());
         hash1000K.populate();
         String hashFor1000k = hash1000K.getResults();
 
-        SetUtils tree1000K = new SetUtils(1_000_000, new TreeSet<Integer>());
+        SetUtils tree1000K = new SetUtils(1_000_000, new TreeSet<>());
         tree1000K.populate();
         String treeFor1000k = tree1000K.getResults();
 
