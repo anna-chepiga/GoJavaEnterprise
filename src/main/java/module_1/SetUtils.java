@@ -5,21 +5,23 @@ import java.util.*;
 public class SetUtils {
    private Set<Integer> set;
    private int size;
+   private Random random;
+
 
    public SetUtils(int size, HashSet<Integer> hashSet) {
       this.size = size;
       this.set = hashSet;
+      random = new Random(100);
    }
 
    public SetUtils(int size, TreeSet<Integer> treeSet) {
       this.size = size;
       this.set = treeSet;
+      random = new Random(100);
    }
 
    private long sumPopulate = 0;
-   private final int REPETITIONS = 100;
-
-   private Random random = new Random(100);
+   private static final int REPETITIONS = 100;
 
    public void populate() {
       for (int i = 0; i < REPETITIONS; i++) {
@@ -33,7 +35,7 @@ public class SetUtils {
          long finish = System.nanoTime();
          long timeConsumed = finish - start;
 
-         sumPopulate = sumPopulate + timeConsumed;
+         sumPopulate += timeConsumed;
       }
    }
 
@@ -50,7 +52,7 @@ public class SetUtils {
          long finish = System.nanoTime();
 
          long timeConsumed = finish - start;
-         sum = sum + timeConsumed;
+         sum += timeConsumed;
       }
 
       return sum / REPETITIONS;
@@ -65,7 +67,7 @@ public class SetUtils {
          long finish = System.nanoTime();
 
          long timeConsumed = finish - start;
-         sum = sum + timeConsumed;
+         sum += timeConsumed;
       }
 
       return sum / REPETITIONS;
@@ -80,7 +82,7 @@ public class SetUtils {
          long finish = System.nanoTime();
 
          long timeConsumed = finish - start;
-         sum = sum + timeConsumed;
+         sum += timeConsumed;
       }
 
       return sum / REPETITIONS;
