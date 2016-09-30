@@ -15,7 +15,7 @@ public class CountThread extends Thread {
     public void run() {
         try {
             System.out.println(name + " awaits permission");
-            semaphore.acquire(2);
+            semaphore.acquire();
             System.out.println(name + " gets permission");
 
             counter.value = 1;
@@ -29,7 +29,7 @@ public class CountThread extends Thread {
             System.out.println(e.getMessage());
         } finally {
             System.out.println(name + " releases permission");
-            semaphore.release(2);
+            semaphore.release();
         }
     }
 }
