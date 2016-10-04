@@ -1,0 +1,27 @@
+<project name="collections-effectiveness" basedir=".">
+    <property name="src" location="src/main/java/module_2"/>
+    <property name="build" location="build"/>
+    <property name="dist" location="dist"/>
+
+    <target name="init">
+        <mkdir dir="${build}"/>
+        <mkdir dir="${dist}"/>
+    </target>
+
+    <target name="clean">
+        <delete dir="${build}"/>
+        <delete dir="${dist}"/>
+    </target>
+
+    <target name="compile" depends="init">
+        <javac srcdir="${src}" destdir="${build}" source="1.8" target="1.8"/>
+    </target>
+
+    <target name="dist" depends="compile">
+        <jar destfile="${dist}/executor.jar" basedir="${build}">
+            <manifest>
+                <attribute name="Main-Class" value="module_2.Test"/>
+            </manifest>
+        </jar>
+    </target>
+</project>
