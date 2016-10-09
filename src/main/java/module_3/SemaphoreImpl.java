@@ -21,7 +21,7 @@ public class SemaphoreImpl implements Semaphore {
    @Override
    public void acquire(int permits) throws InterruptedException {
       synchronized (lock) {
-         while (availablePermits == 0) {
+         while (availablePermits < permits) {
             lock.wait();
          }
          availablePermits -= permits;
@@ -31,20 +31,16 @@ public class SemaphoreImpl implements Semaphore {
    @Override
    public void release() {
       synchronized (lock) {
-         if (availablePermits == 0) {
-            availablePermits++;
-            lock.notify();
-         }
+         availablePermits++;
+         lock.notify();
       }
    }
 
    @Override
    public void release(int permits) {
       synchronized (lock) {
-         if (availablePermits == 0) {
-            availablePermits += permits;
-            lock.notifyAll();
-         }
+         availablePermits += permits;
+         lock.notifyAll();
       }
    }
 

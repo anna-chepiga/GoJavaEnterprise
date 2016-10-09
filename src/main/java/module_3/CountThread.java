@@ -21,7 +21,7 @@ public class CountThread extends Thread {
             counter.value = 1;
 
             for (int i = 0; i < 5; i++) {
-                System.out.println(name + " changes value to " + counter.value);
+                System.out.println(name + ", value: " + counter.value);
                 counter.value++;
                 Thread.sleep(100);
             }
