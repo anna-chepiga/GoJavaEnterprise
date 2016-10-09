@@ -13,5 +13,5 @@ public interface Executor<T> {
 
     List<? extends T> getInvalidResults() throws ExecuteNotCalledException;
 
-    List<Task<? extends Number>> getTasks();
+    List<Task<? extends T>> getTasks();
 }
