@@ -6,43 +6,41 @@ import java.util.concurrent.*;
 
 public class SquareSumArray implements SquareSum {
    @Override
-   public long getSquareSum(int[] values, int numberOfThreads)
-           throws ExecutionException, InterruptedException {
+   public long getSquareSum(int[] values, int amountOfThreads)
+           throws ExecutionException, InterruptedException, IllegalStateException {
 
-      int[][] splitValues = new int[numberOfThreads][];
-      int elements = values.length / numberOfThreads;
+      if (amountOfThreads <= 0) throw new IllegalStateException("amount of threads cannot be negative or zero");
 
-      int lastElements = values.length % numberOfThreads == 0 ? elements :
-              elements + values.length % numberOfThreads;
+      if (values.length < amountOfThreads) {
+         System.out.println("No logic in calculating " + values.length + " elements in " +
+                 amountOfThreads + " threads, therefore changing amount of threads to 1");
+         amountOfThreads = 1;
+      }
 
-      Phaser phaser = new Phaser(numberOfThreads);
-      ExecutorService executor = Executors.newFixedThreadPool(numberOfThreads);
+      int elements = values.length / amountOfThreads;
+      int remainder = values.length % amountOfThreads == 0 ? 0 : values.length % amountOfThreads;
+
+      Phaser phaser = new Phaser(amountOfThreads);
+      ExecutorService executor = Executors.newFixedThreadPool(amountOfThreads);
       List<Future<Long>> list = new ArrayList<>();
 
-      for (int i = 0; i < numberOfThreads; i++) {
-         int position = i * elements;
-
-         if (numberOfThreads - i == 1) {
-            elements = lastElements;
-         }
-
-         final int[] valuesToCalculate = splitValues[i] = new int[elements];
-         System.arraycopy(values, position, valuesToCalculate, 0, elements);
+      for (int i = 0; i < amountOfThreads; i++) {
+         int start = i * elements;
+         int finish = i + 1 != amountOfThreads ? start + elements : start + elements + remainder;
 
          Future<Long> future = executor.submit(() -> {
             long sum = 0;
-
-            for (int element : valuesToCalculate) {
-               int square = element * element;
-               sum = sum + square;
+            for (int j = start; j < finish; j++) {
+               sum += values[j] * values[j];
             }
 
-            phaser.arriveAndDeregister();
+            phaser.arriveAndAwaitAdvance();
 
             return sum;
          });
 
          list.add(future);
+
       }
 
       executor.shutdown();
