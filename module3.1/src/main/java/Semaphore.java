@@ -1,5 +1,3 @@
-package module_3;
-
 public interface Semaphore {
     void acquire() throws InterruptedException;
 

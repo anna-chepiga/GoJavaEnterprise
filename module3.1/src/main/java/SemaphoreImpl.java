@@ -1,5 +1,3 @@
-package module_3;
-
 public class SemaphoreImpl implements Semaphore {
    private int availablePermits;
    private final Object lock = new Object();

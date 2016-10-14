@@ -1,5 +1,3 @@
-package module_3;
-
 public class Runner {
    public static void main(String[] args) {
       Semaphore semaphore = new SemaphoreImpl(2);

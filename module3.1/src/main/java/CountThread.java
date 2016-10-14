@@ -1,5 +1,3 @@
-package module_3;
-
 public class CountThread extends Thread {
     private String name;
     private Semaphore semaphore;
@@ -23,7 +21,7 @@ public class CountThread extends Thread {
             for (int i = 0; i < 5; i++) {
                 System.out.println(name + ", value: " + counter.value);
                 counter.value++;
-                Thread.sleep(100);
+                //Thread.sleep(100);
             }
         } catch (InterruptedException e) {
             System.out.println(e.getMessage());
