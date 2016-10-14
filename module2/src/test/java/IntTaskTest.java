@@ -1,8 +1,4 @@
-package module_2;
-
-import org.junit.*;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class IntTaskTest {
     @org.junit.Test

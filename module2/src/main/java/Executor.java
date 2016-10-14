@@ -1,5 +1,3 @@
-package module_2;
-
 import java.util.List;
 
 public interface Executor<T> {

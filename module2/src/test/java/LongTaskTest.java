@@ -1,8 +1,4 @@
-package module_2;
-
-import org.junit.*;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class LongTaskTest {
     @org.junit.Test
@@ -14,5 +10,4 @@ public class LongTaskTest {
 
         assertEquals(result, 1500);
     }
-
 }

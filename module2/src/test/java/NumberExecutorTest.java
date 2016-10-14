@@ -1,12 +1,10 @@
-package module_2;
-
 import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
 import static java.util.Arrays.asList;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class NumberExecutorTest {
     private static Task<Integer> intTask1 = new IntTask(20);
@@ -48,8 +46,8 @@ public class NumberExecutorTest {
     public void addTaskWithValidator() throws Exception {
         Executor<Number> executor = new NumberExecutor();
 
-        executor.addTask(intTask2, validator);
-        executor.addTask(longTask1, validator);
+        executor.addTask(new IntTask(5), validator);
+        executor.addTask(new LongTask(40L), validator);
 
         executor.execute();
 
@@ -89,7 +87,7 @@ public class NumberExecutorTest {
     public void getValidResults() throws Exception {
         Executor<Number> executor = new NumberExecutor();
 
-        executor.addTask(intTask1);
+        executor.addTask(new IntTask(20));
         executor.addTask(intTask3);
 
         executor.execute();

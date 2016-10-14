@@ -1,5 +1,3 @@
-package module_2;
-
 public class IntTask implements Task<Integer> {
     private Integer value;
 

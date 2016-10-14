@@ -1,5 +1,3 @@
-package module_2;
-
 public class LongTask implements Task<Long> {
     private Long value;
 
