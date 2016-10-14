@@ -1,7 +1,11 @@
-package module_1;
-
-import java.io.*;
-import java.util.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.TreeSet;
 
 public class Runner {
    public static void main(String[] args) throws IOException {
@@ -85,7 +89,7 @@ public class Runner {
          System.out.println("File has been already created");
       }
 
-      FileWriter writer = new java.io.FileWriter(file.getAbsolutePath());
+      FileWriter writer = new FileWriter(file.getAbsolutePath());
       BufferedWriter bw = new BufferedWriter(writer);
 
       bw.write("collections effectiveness:\n\n" + header10k + results10k + "\n"

@@ -1,6 +1,7 @@
-package module_1;
-
-import java.util.*;
+import java.util.HashSet;
+import java.util.Random;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class SetUtils {
    private Set<Integer> set;

@@ -1,5 +1,5 @@
 <project name="collections-effectiveness" basedir=".">
-    <property name="src" location="src/main/java/module_2"/>
+    <property name="src" location="src/main/java"/>
     <property name="build" location="build"/>
     <property name="dist" location="dist"/>
 
@@ -18,9 +18,9 @@
     </target>
 
     <target name="dist" depends="compile">
-        <jar destfile="${dist}/executor.jar" basedir="${build}">
+        <jar destfile="${dist}/collections.jar" basedir="${build}">
             <manifest>
-                <attribute name="Main-Class" value="module_2.Test"/>
+                <attribute name="Main-Class" value="Runner"/>
             </manifest>
         </jar>
     </target>
