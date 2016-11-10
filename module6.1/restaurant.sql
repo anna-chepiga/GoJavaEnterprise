@@ -1,273 +1,283 @@
-create database restaurant;
+CREATE DATABASE restaurant;
 
-use restaurant;
+USE restaurant;
 
-create table employee (
-    id int not null auto_increment,
-    first_name varchar(20) not null,
-    last_name varchar(20) not null,
-    birthday date not null,
-    phone_number varchar(10),
-    position int not null,
-    salary int not null,
-    primary key (id)
+CREATE TABLE employee (
+  id           INT         NOT NULL AUTO_INCREMENT,
+  first_name   VARCHAR(20) NOT NULL,
+  last_name    VARCHAR(20) NOT NULL,
+  birthday     DATE        NOT NULL,
+  phone_number VARCHAR(10),
+  position     INT         NOT NULL,
+  salary       INT         NOT NULL,
+  PRIMARY KEY (id)
 );
 
-insert into employee (first_name, last_name, birthday, phone_number, position, salary) values('Anna', 'Chepiga', '1990-12-25', '0991111111', 1, 50000);
-insert into employee (first_name, last_name, birthday, phone_number, position, salary) values('Alex', 'Hello', '1989-06-13', '0992222222', 2, 40000);
-insert into employee (first_name, last_name, birthday, phone_number, position, salary) values('Chris', 'Hemsworth', '1988-04-02', '0993333333', 3, 30000);
-insert into employee (first_name, last_name, birthday, phone_number, position, salary) values('Tom', 'Hiddleston', '1992-10-14', '0994444444', 4, 20000);
-insert into employee (first_name, last_name, birthday, phone_number, position, salary) values('Eva', 'Green', '1990-04-27', '0995555555', 4, 20500);
-insert into employee (first_name, last_name, birthday, phone_number, position, salary) values('Johhny', 'Depp', '1991-05-18', '0996666666', 5, 10000);
-insert into employee (first_name, last_name, birthday, phone_number, position, salary) values('Matt', 'Bellamy', '1992-10-01', '0997777777', 5, 12000);
-insert into employee (first_name, last_name, birthday, phone_number, position, salary) values('Anna', 'Potter', '1993-04-22', '0998888888', 5, 11000);
-insert into employee (first_name, last_name, birthday, phone_number, position, salary) values('Harry', 'Potter', '1991-07-31', '0999999999', 5, 11500);
+INSERT INTO employee (first_name, last_name, birthday, phone_number, position, salary)
+VALUES ('Anna', 'Chepiga', '1990-12-25', '0991111111', 1, 50000);
+INSERT INTO employee (first_name, last_name, birthday, phone_number, position, salary)
+VALUES ('Alex', 'Hello', '1989-06-13', '0992222222', 2, 40000);
+INSERT INTO employee (first_name, last_name, birthday, phone_number, position, salary)
+VALUES ('Chris', 'Hemsworth', '1988-04-02', '0993333333', 3, 30000);
+INSERT INTO employee (first_name, last_name, birthday, phone_number, position, salary)
+VALUES ('Tom', 'Hiddleston', '1992-10-14', '0994444444', 4, 20000);
+INSERT INTO employee (first_name, last_name, birthday, phone_number, position, salary)
+VALUES ('Eva', 'Green', '1990-04-27', '0995555555', 4, 20500);
+INSERT INTO employee (first_name, last_name, birthday, phone_number, position, salary)
+VALUES ('Johhny', 'Depp', '1991-05-18', '0996666666', 5, 10000);
+INSERT INTO employee (first_name, last_name, birthday, phone_number, position, salary)
+VALUES ('Matt', 'Bellamy', '1992-10-01', '0997777777', 5, 12000);
+INSERT INTO employee (first_name, last_name, birthday, phone_number, position, salary)
+VALUES ('Anna', 'Potter', '1993-04-22', '0998888888', 5, 11000);
+INSERT INTO employee (first_name, last_name, birthday, phone_number, position, salary)
+VALUES ('Harry', 'Potter', '1991-07-31', '0999999999', 5, 11500);
 
-create table restaurant.position(
-    id int not null,
-    name varchar(20),
-    primary key (id)
+CREATE TABLE restaurant.position (
+  id   INT NOT NULL,
+  name VARCHAR(20),
+  PRIMARY KEY (id)
 );
 
-insert into restaurant.position values(1, 'SEO');
-insert into restaurant.position values(2, 'Art Director');
-insert into restaurant.position values(3, 'Manager');
-insert into restaurant.position values(4, 'Cooker');
-insert into restaurant.position values(5, 'Waiter');
+INSERT INTO restaurant.position VALUES (1, 'SEO');
+INSERT INTO restaurant.position VALUES (2, 'Art Director');
+INSERT INTO restaurant.position VALUES (3, 'Manager');
+INSERT INTO restaurant.position VALUES (4, 'Cooker');
+INSERT INTO restaurant.position VALUES (5, 'Waiter');
 
-create table restaurant.created_order(
-    id int not null auto_increment,
-    waiter_id int not null,
-    table_number int,
-    date date not null,
-    primary key (id)
+CREATE TABLE restaurant.created_order (
+  id           INT  NOT NULL AUTO_INCREMENT,
+  waiter_id    INT  NOT NULL,
+  table_number INT,
+  date         DATE NOT NULL,
+  PRIMARY KEY (id)
 );
 
-insert into restaurant.created_order(waiter_id,  table_number, date) values(6, 12, '2016-10-20');
-insert into restaurant.created_order(waiter_id,  table_number, date) values(8, 5, '2016-10-20');
-insert into restaurant.created_order(waiter_id, table_number, date) values(8, 2, '2016-10-21');
-insert into restaurant.created_order(waiter_id, table_number, date) values(7, 4, '2016-10-21');
-insert into restaurant.created_order(waiter_id, table_number, date) values(9, 8, '2016-10-21');
-insert into restaurant.created_order(waiter_id, table_number, date) values(6, 3, '2016-10-21');
+INSERT INTO restaurant.created_order (waiter_id, table_number, date) VALUES (6, 12, '2016-10-20');
+INSERT INTO restaurant.created_order (waiter_id, table_number, date) VALUES (8, 5, '2016-10-20');
+INSERT INTO restaurant.created_order (waiter_id, table_number, date) VALUES (8, 2, '2016-10-21');
+INSERT INTO restaurant.created_order (waiter_id, table_number, date) VALUES (7, 4, '2016-10-21');
+INSERT INTO restaurant.created_order (waiter_id, table_number, date) VALUES (9, 8, '2016-10-21');
+INSERT INTO restaurant.created_order (waiter_id, table_number, date) VALUES (6, 3, '2016-10-21');
 
-create table dishes_category(
-    id int not null,
-    name varchar(20),
-    primary key (id)
+CREATE TABLE dishes_category (
+  id   INT NOT NULL,
+  name VARCHAR(20),
+  PRIMARY KEY (id)
 );
 
-insert into dishes_category values(1, 'First course');
-insert into dishes_category values(2, 'Main course');
-insert into dishes_category values(3, 'Beverage');
-insert into dishes_category values(4, 'Salad');
-insert into dishes_category values(5, 'Meat');
+INSERT INTO dishes_category VALUES (1, 'First course');
+INSERT INTO dishes_category VALUES (2, 'Main course');
+INSERT INTO dishes_category VALUES (3, 'Beverage');
+INSERT INTO dishes_category VALUES (4, 'Salad');
+INSERT INTO dishes_category VALUES (5, 'Meat');
 
-create table dish(
-    id int not null auto_increment,
-    name varchar(20) not null,
-    category int not null,
-    price double not null,
-    weight int not null,
-    primary key (id)
+CREATE TABLE dish (
+  id       INT         NOT NULL AUTO_INCREMENT,
+  name     VARCHAR(20) NOT NULL,
+  category INT         NOT NULL,
+  price    DOUBLE      NOT NULL,
+  weight   INT         NOT NULL,
+  PRIMARY KEY (id)
 );
 
-insert into dish (name, category, price, weight) values('Kharcho', 1, 10, 200);
-insert into dish (name, category, price, weight) values('Borshch', 1, 9.5, 250);
-insert into dish (name, category, price, weight) values('Pilaff', 2, 8.5, 300);
-insert into dish (name, category, price, weight) values('Pasta', 2, 9.2, 250);
-insert into dish (name, category, price, weight) values('Tea', 3, 3, 300);
-insert into dish (name, category, price, weight) values('Coffee', 3, 3.5, 250);
-insert into dish (name, category, price, weight) values('Juice', 3, 4, 300);
-insert into dish (name, category, price, weight) values('Greek salad', 4, 5, 300);
-insert into dish (name, category, price, weight) values('Cesar', 4, 6.5, 300);
-insert into dish (name, category, price, weight) values('Steak', 5, 7, 150);
-insert into dish (name, category, price, weight) values('Hamburger', 5, 6.5, 250);
+INSERT INTO dish (name, category, price, weight) VALUES ('Kharcho', 1, 10, 200);
+INSERT INTO dish (name, category, price, weight) VALUES ('Borshch', 1, 9.5, 250);
+INSERT INTO dish (name, category, price, weight) VALUES ('Pilaff', 2, 8.5, 300);
+INSERT INTO dish (name, category, price, weight) VALUES ('Pasta', 2, 9.2, 250);
+INSERT INTO dish (name, category, price, weight) VALUES ('Tea', 3, 3, 300);
+INSERT INTO dish (name, category, price, weight) VALUES ('Coffee', 3, 3.5, 250);
+INSERT INTO dish (name, category, price, weight) VALUES ('Juice', 3, 4, 300);
+INSERT INTO dish (name, category, price, weight) VALUES ('Greek salad', 4, 5, 300);
+INSERT INTO dish (name, category, price, weight) VALUES ('Cesar', 4, 6.5, 300);
+INSERT INTO dish (name, category, price, weight) VALUES ('Steak', 5, 7, 150);
+INSERT INTO dish (name, category, price, weight) VALUES ('Hamburger', 5, 6.5, 250);
 
-create table order_dishes_list(
-    created_order_id int,
-    dish_id int);
-
-insert into order_dishes_list values(1, 4);
-insert into order_dishes_list values(1, 5);
-insert into order_dishes_list values(1, 8);
-insert into order_dishes_list values(2, 1);
-insert into order_dishes_list values(2, 2);
-insert into order_dishes_list values(2, 7);
-
-create table cooked_dishes(
-    id int not null auto_increment,
-    dish_id int not null,
-    cooker_id int not null,
-    order_id int not null,
-    date date not null,
-    primary key (id)
+CREATE TABLE order_dishes_list (
+  created_order_id INT,
+  dish_id          INT
 );
 
-insert into cooked_dishes (dish_id, cooker_id, order_id, date) values(1, 4, 1, '2016-10-20');
-insert into cooked_dishes (dish_id, cooker_id, order_id, date) values(5, 4, 1, '2016-10-20');
-insert into cooked_dishes (dish_id, cooker_id, order_id, date) values(9, 4, 1, '2016-10-20');
-insert into cooked_dishes (dish_id, cooker_id, order_id, date) values(3, 5, 2, '2016-10-21');
-insert into cooked_dishes (dish_id, cooker_id, order_id, date) values(7, 5, 2, '2016-10-21');
-insert into cooked_dishes (dish_id, cooker_id, order_id, date) values(10, 5, 2, '2016-10-21');
+INSERT INTO order_dishes_list VALUES (1, 4);
+INSERT INTO order_dishes_list VALUES (1, 5);
+INSERT INTO order_dishes_list VALUES (1, 8);
+INSERT INTO order_dishes_list VALUES (2, 1);
+INSERT INTO order_dishes_list VALUES (2, 2);
+INSERT INTO order_dishes_list VALUES (2, 7);
 
-create table menu(
-    id int not null,
-    name varchar(20),
-    primary key (id)
+CREATE TABLE cooked_dishes (
+  id        INT  NOT NULL AUTO_INCREMENT,
+  dish_id   INT  NOT NULL,
+  cooker_id INT  NOT NULL,
+  order_id  INT  NOT NULL,
+  date      DATE NOT NULL,
+  PRIMARY KEY (id)
 );
 
-insert into menu values(1, 'Breakfast');
-insert into menu values(2, 'Lunch');
-insert into menu values(3, 'Dinner');
+INSERT INTO cooked_dishes (dish_id, cooker_id, order_id, date) VALUES (1, 4, 1, '2016-10-20');
+INSERT INTO cooked_dishes (dish_id, cooker_id, order_id, date) VALUES (5, 4, 1, '2016-10-20');
+INSERT INTO cooked_dishes (dish_id, cooker_id, order_id, date) VALUES (9, 4, 1, '2016-10-20');
+INSERT INTO cooked_dishes (dish_id, cooker_id, order_id, date) VALUES (3, 5, 2, '2016-10-21');
+INSERT INTO cooked_dishes (dish_id, cooker_id, order_id, date) VALUES (7, 5, 2, '2016-10-21');
+INSERT INTO cooked_dishes (dish_id, cooker_id, order_id, date) VALUES (10, 5, 2, '2016-10-21');
 
-create table menu_dishes_list(
-    menu_id int,
-    dish_id int
+CREATE TABLE menu (
+  id   INT NOT NULL,
+  name VARCHAR(20),
+  PRIMARY KEY (id)
 );
 
-insert into menu_dishes_list values(1, 4);
-insert into menu_dishes_list values(1, 5);
-insert into menu_dishes_list values(1, 6);
-insert into menu_dishes_list values(1, 8);
-insert into menu_dishes_list values(2, 1);
-insert into menu_dishes_list values(2, 2);
-insert into menu_dishes_list values(2, 3);
-insert into menu_dishes_list values(2, 5);
-insert into menu_dishes_list values(2, 7);
-insert into menu_dishes_list values(3, 5);
-insert into menu_dishes_list values(3, 7);
-insert into menu_dishes_list values(3, 8);
-insert into menu_dishes_list values(3, 10);
-insert into menu_dishes_list values(3, 11);
+INSERT INTO menu VALUES (1, 'Breakfast');
+INSERT INTO menu VALUES (2, 'Lunch');
+INSERT INTO menu VALUES (3, 'Dinner');
 
-create table ingredient(
-    ID int not null auto_increment,
-    name varchar(20),
-    primary key (id)
+CREATE TABLE menu_dishes_list (
+  menu_id INT,
+  dish_id INT
 );
 
-insert into ingredient (name) value('Potato');
-insert into ingredient (name) value('Beet');
-insert into ingredient (name) value('Cabbage');
-insert into ingredient (name) value('Onion');
-insert into ingredient (name) value('Rice');
-insert into ingredient (name) value('Pasta');
-insert into ingredient (name) value('Sauce');
-insert into ingredient (name) value('Tea');
-insert into ingredient (name) value('Coffee');
-insert into ingredient (name) value('Apple juice');
-insert into ingredient (name) value('Orange juice');
-insert into ingredient (name) value('Sweet pepper');
-insert into ingredient (name) value('Cheese');
-insert into ingredient (name) value('Cucumber');
-insert into ingredient (name) value('Sun oil');
-insert into ingredient (name) value('Pork');
-insert into ingredient (name) value('Beef');
+INSERT INTO menu_dishes_list VALUES (1, 4);
+INSERT INTO menu_dishes_list VALUES (1, 5);
+INSERT INTO menu_dishes_list VALUES (1, 6);
+INSERT INTO menu_dishes_list VALUES (1, 8);
+INSERT INTO menu_dishes_list VALUES (2, 1);
+INSERT INTO menu_dishes_list VALUES (2, 2);
+INSERT INTO menu_dishes_list VALUES (2, 3);
+INSERT INTO menu_dishes_list VALUES (2, 5);
+INSERT INTO menu_dishes_list VALUES (2, 7);
+INSERT INTO menu_dishes_list VALUES (3, 5);
+INSERT INTO menu_dishes_list VALUES (3, 7);
+INSERT INTO menu_dishes_list VALUES (3, 8);
+INSERT INTO menu_dishes_list VALUES (3, 10);
+INSERT INTO menu_dishes_list VALUES (3, 11);
 
-create table dish_ingredients(
-    dish_id int,
-    ingredient_id int
+CREATE TABLE ingredient (
+  ID   INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(20),
+  PRIMARY KEY (id)
 );
 
-insert into dish_ingredients values(1,1);
-insert into dish_ingredients values(1,3);
-insert into dish_ingredients values(1,4);
-insert into dish_ingredients values(1,12);
-insert into dish_ingredients values(1,15);
-insert into dish_ingredients values(2,1);
-insert into dish_ingredients values(2,2);
-insert into dish_ingredients values(2,3);
-insert into dish_ingredients values(2,4);
-insert into dish_ingredients values(2,15);
+INSERT INTO ingredient (name) VALUE ('Potato');
+INSERT INTO ingredient (name) VALUE ('Beet');
+INSERT INTO ingredient (name) VALUE ('Cabbage');
+INSERT INTO ingredient (name) VALUE ('Onion');
+INSERT INTO ingredient (name) VALUE ('Rice');
+INSERT INTO ingredient (name) VALUE ('Pasta');
+INSERT INTO ingredient (name) VALUE ('Sauce');
+INSERT INTO ingredient (name) VALUE ('Tea');
+INSERT INTO ingredient (name) VALUE ('Coffee');
+INSERT INTO ingredient (name) VALUE ('Apple juice');
+INSERT INTO ingredient (name) VALUE ('Orange juice');
+INSERT INTO ingredient (name) VALUE ('Sweet pepper');
+INSERT INTO ingredient (name) VALUE ('Cheese');
+INSERT INTO ingredient (name) VALUE ('Cucumber');
+INSERT INTO ingredient (name) VALUE ('Sun oil');
+INSERT INTO ingredient (name) VALUE ('Pork');
+INSERT INTO ingredient (name) VALUE ('Beef');
 
-create table storage(
-    ingredient_id int not null,
-    amount int not null,
-    primary key (ingredient_id, amount)
+CREATE TABLE dish_ingredients (
+  dish_id       INT,
+  ingredient_id INT
 );
 
-insert into restaurant.storage values (1, 100);
-insert into restaurant.storage values (2, 90);
-insert into restaurant.storage values (3, 95);
-insert into restaurant.storage values (4, 102);
-insert into restaurant.storage values (5, 50);
-insert into restaurant.storage values (6, 60);
-insert into restaurant.storage values (7, 30);
-insert into restaurant.storage values (8, 30);
-insert into restaurant.storage values (9, 40);
-insert into restaurant.storage values (10, 55);
-insert into restaurant.storage values (11, 75);
-insert into restaurant.storage values (12, 35);
-insert into restaurant.storage values (13, 28);
-insert into restaurant.storage values (14, 62);
-insert into restaurant.storage values (15, 15);
-insert into restaurant.storage values (16, 105);
-insert into restaurant.storage values (17, 88);
+INSERT INTO dish_ingredients VALUES (1, 1);
+INSERT INTO dish_ingredients VALUES (1, 3);
+INSERT INTO dish_ingredients VALUES (1, 4);
+INSERT INTO dish_ingredients VALUES (1, 12);
+INSERT INTO dish_ingredients VALUES (1, 15);
+INSERT INTO dish_ingredients VALUES (2, 1);
+INSERT INTO dish_ingredients VALUES (2, 2);
+INSERT INTO dish_ingredients VALUES (2, 3);
+INSERT INTO dish_ingredients VALUES (2, 4);
+INSERT INTO dish_ingredients VALUES (2, 15);
 
-alter table cooked_dishes
-    add constraint foreign key (dish_id)
-references dish(id)
-    on delete restrict
-    on update cascade,
-    add constraint foreign key (cooker_id)
-references employee(id)
-    on delete restrict
-    on update cascade,
-    add constraint foreign key (order_id)
-references restaurant.created_order(id)
-    on delete restrict
-    on update cascade;
+CREATE TABLE storage (
+  ingredient_id INT NOT NULL,
+  amount        INT NOT NULL,
+  PRIMARY KEY (ingredient_id, amount)
+);
 
-alter table dish
-    add constraint foreign key (category)
-references dishes_category(id)
-    on delete restrict
-    on update cascade;
+INSERT INTO restaurant.storage VALUES (1, 100);
+INSERT INTO restaurant.storage VALUES (2, 90);
+INSERT INTO restaurant.storage VALUES (3, 95);
+INSERT INTO restaurant.storage VALUES (4, 102);
+INSERT INTO restaurant.storage VALUES (5, 50);
+INSERT INTO restaurant.storage VALUES (6, 60);
+INSERT INTO restaurant.storage VALUES (7, 30);
+INSERT INTO restaurant.storage VALUES (8, 30);
+INSERT INTO restaurant.storage VALUES (9, 40);
+INSERT INTO restaurant.storage VALUES (10, 55);
+INSERT INTO restaurant.storage VALUES (11, 75);
+INSERT INTO restaurant.storage VALUES (12, 35);
+INSERT INTO restaurant.storage VALUES (13, 28);
+INSERT INTO restaurant.storage VALUES (14, 62);
+INSERT INTO restaurant.storage VALUES (15, 15);
+INSERT INTO restaurant.storage VALUES (16, 105);
+INSERT INTO restaurant.storage VALUES (17, 88);
 
-alter table employee
-    add constraint foreign key (position)
-references restaurant.position(id)
-    on delete restrict
-    on update cascade;
+ALTER TABLE cooked_dishes
+  ADD CONSTRAINT FOREIGN KEY (dish_id)
+REFERENCES dish (id)
+  ON DELETE RESTRICT
+  ON UPDATE CASCADE,
+  ADD CONSTRAINT FOREIGN KEY (cooker_id)
+REFERENCES employee (id)
+  ON DELETE RESTRICT
+  ON UPDATE CASCADE,
+  ADD CONSTRAINT FOREIGN KEY (order_id)
+REFERENCES restaurant.created_order (id)
+  ON DELETE RESTRICT
+  ON UPDATE CASCADE;
 
-alter table restaurant.created_order
-    add constraint foreign key (waiter_id)
-references employee(id)
-    on delete restrict
-    on update cascade;
+ALTER TABLE dish
+  ADD CONSTRAINT FOREIGN KEY (category)
+REFERENCES dishes_category (id)
+  ON DELETE RESTRICT
+  ON UPDATE CASCADE;
 
-alter table storage
-    add constraint foreign key (ingredient_id)
-references ingredient(id)
-    on delete restrict
-    on update cascade;
+ALTER TABLE employee
+  ADD CONSTRAINT FOREIGN KEY (position)
+REFERENCES restaurant.position (id)
+  ON DELETE RESTRICT
+  ON UPDATE CASCADE;
 
-alter table dish_ingredients
-    add constraint foreign key(dish_id)
-references dish(id)
-    on delete restrict
-    on update cascade,
-    add constraint foreign key(ingredient_id)
-references ingredient(id)
-    on delete restrict
-    on update cascade;
+ALTER TABLE restaurant.created_order
+  ADD CONSTRAINT FOREIGN KEY (waiter_id)
+REFERENCES employee (id)
+  ON DELETE RESTRICT
+  ON UPDATE CASCADE;
 
-alter table menu_dishes_list
-    add constraint foreign key(dish_id)
-references dish(id)
-    on delete restrict
-    on update cascade,
-    add constraint foreign key(menu_id)
-references menu(id)
-    on delete restrict
-    on update cascade;
+ALTER TABLE storage
+  ADD CONSTRAINT FOREIGN KEY (ingredient_id)
+REFERENCES ingredient (id)
+  ON DELETE RESTRICT
+  ON UPDATE CASCADE;
 
-alter table order_dishes_list
-    add constraint foreign key(created_order_id)
-references created_order(id)
-    on delete restrict
-    on update cascade,
-    add constraint foreign key(dish_id)
-references dish(id)
-    on delete restrict
-    on update cascade;
+ALTER TABLE dish_ingredients
+  ADD CONSTRAINT FOREIGN KEY (dish_id)
+REFERENCES dish (id)
+  ON DELETE RESTRICT
+  ON UPDATE CASCADE,
+  ADD CONSTRAINT FOREIGN KEY (ingredient_id)
+REFERENCES ingredient (id)
+  ON DELETE RESTRICT
+  ON UPDATE CASCADE;
+
+ALTER TABLE menu_dishes_list
+  ADD CONSTRAINT FOREIGN KEY (dish_id)
+REFERENCES dish (id)
+  ON DELETE RESTRICT
+  ON UPDATE CASCADE,
+  ADD CONSTRAINT FOREIGN KEY (menu_id)
+REFERENCES menu (id)
+  ON DELETE RESTRICT
+  ON UPDATE CASCADE;
+
+ALTER TABLE order_dishes_list
+  ADD CONSTRAINT FOREIGN KEY (created_order_id)
+REFERENCES created_order (id)
+  ON DELETE RESTRICT
+  ON UPDATE CASCADE,
+  ADD CONSTRAINT FOREIGN KEY (dish_id)
+REFERENCES dish (id)
+  ON DELETE RESTRICT
+  ON UPDATE CASCADE;
