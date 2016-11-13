@@ -1,21 +1,20 @@
-package ua.goit.calculator.provider;
+package ua.goit.lib.provider;
 
 import com.tngtech.java.junit.dataprovider.DataProvider;
 import com.tngtech.java.junit.dataprovider.DataProviderRunner;
 import com.tngtech.java.junit.dataprovider.UseDataProvider;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import ua.goit.calculator.exception.UnsupportedOperationException;
-import ua.goit.calculator.operations.Operation;
-import ua.goit.calculator.operations.addition.OperationAdditionDouble;
-import ua.goit.calculator.operations.unary.OperationSquareRootDouble;
-import ua.goit.calculator.exception.UnsupportedTypeException;
-import ua.goit.calculator.operations.subtraction.OperationSubtractionInteger;
+import ua.goit.lib.exception.UnsupportedOperationException;
+import ua.goit.lib.operations.Operation;
+import ua.goit.lib.operations.addition.OperationAdditionDouble;
+import ua.goit.lib.operations.unary.OperationSquareRootDouble;
+import ua.goit.lib.exception.UnsupportedTypeException;
+import ua.goit.lib.operations.subtraction.OperationSubtractionInteger;
 
 import java.util.Arrays;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 @RunWith(DataProviderRunner.class)
 public class ExtendedUnaryOperationProviderTest {
@@ -37,7 +36,7 @@ public class ExtendedUnaryOperationProviderTest {
             throws UnsupportedTypeException, UnsupportedOperationException {
         ExtendedUnaryOperationProvider provider = new ExtendedUnaryOperationProvider();
 
-        assertEquals(expected, provider.getSuitableOperation(operations, input).getClass());
+        Assert.assertEquals(expected, provider.getSuitableOperation(operations, input).getClass());
     }
 
     @Test(expected = UnsupportedOperationException.class)

@@ -1,11 +1,11 @@
-package ua.goit.calculator;
+package ua.goit.lib;
 
 import org.junit.Before;
 import org.junit.Test;
-import ua.goit.calculator.operations.addition.OperationAdditionFloat;
-import ua.goit.calculator.operations.subtraction.OperationSubtractionLong;
-import ua.goit.calculator.operations.unary.OperationSquareRootDouble;
-import ua.goit.calculator.provider.ExtendedUnaryOperationProvider;
+import ua.goit.lib.operations.addition.OperationAdditionFloat;
+import ua.goit.lib.operations.subtraction.OperationSubtractionLong;
+import ua.goit.lib.operations.unary.OperationSquareRootDouble;
+import ua.goit.lib.provider.ExtendedUnaryOperationProvider;
 
 import static org.junit.Assert.*;
 

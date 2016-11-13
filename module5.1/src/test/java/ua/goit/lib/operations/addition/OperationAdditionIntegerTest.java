@@ -1,11 +1,11 @@
-package ua.goit.calculator.operations.addition;
+package ua.goit.lib.operations.addition;
 
 import com.tngtech.java.junit.dataprovider.DataProvider;
 import com.tngtech.java.junit.dataprovider.DataProviderRunner;
 import com.tngtech.java.junit.dataprovider.UseDataProvider;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import ua.goit.calculator.operations.Operation;
+import ua.goit.lib.operations.Operation;
 
 import static org.junit.Assert.*;
 
