@@ -1,6 +1,6 @@
-package ua.goit.calculator.operations.subtraction;
+package ua.goit.lib.operations.subtraction;
 
-import ua.goit.calculator.operations.OperationSubtraction;
+import ua.goit.lib.operations.OperationSubtraction;
 
 public class OperationSubtractionFloat implements OperationSubtraction {
     @Override

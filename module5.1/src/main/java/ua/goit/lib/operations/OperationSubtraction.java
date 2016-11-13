@@ -1,4 +1,4 @@
-package ua.goit.calculator.operations;
+package ua.goit.lib.operations;
 
 public interface OperationSubtraction extends Operation {
     String operationSymbol = "-";

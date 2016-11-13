@@ -1,9 +1,9 @@
-package ua.goit.calculator;
+package ua.goit.lib;
 
-import ua.goit.calculator.operations.addition.OperationAdditionDouble;
-import ua.goit.calculator.operations.subtraction.OperationSubtractionInteger;
-import ua.goit.calculator.operations.unary.OperationSquareRootDouble;
-import ua.goit.calculator.provider.ExtendedUnaryOperationProvider;
+import ua.goit.lib.operations.addition.OperationAdditionDouble;
+import ua.goit.lib.operations.subtraction.OperationSubtractionInteger;
+import ua.goit.lib.operations.unary.OperationSquareRootDouble;
+import ua.goit.lib.provider.ExtendedUnaryOperationProvider;
 
 
 import java.util.Scanner;

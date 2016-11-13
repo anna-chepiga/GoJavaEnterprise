@@ -1,4 +1,4 @@
-package ua.goit.calculator.exception;
+package ua.goit.lib.exception;
 
 public class UnsupportedTypeException extends Exception {
     public UnsupportedTypeException() {

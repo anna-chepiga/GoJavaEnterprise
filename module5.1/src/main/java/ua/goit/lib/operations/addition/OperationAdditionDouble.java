@@ -1,6 +1,6 @@
-package ua.goit.calculator.operations.addition;
+package ua.goit.lib.operations.addition;
 
-import ua.goit.calculator.operations.OperationAddition;
+import ua.goit.lib.operations.OperationAddition;
 
 public class OperationAdditionDouble implements OperationAddition {
     @Override

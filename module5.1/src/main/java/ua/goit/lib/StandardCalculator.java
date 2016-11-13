@@ -1,9 +1,9 @@
-package ua.goit.calculator;
+package ua.goit.lib;
 
-import ua.goit.calculator.exception.UnsupportedOperationException;
-import ua.goit.calculator.exception.UnsupportedTypeException;
-import ua.goit.calculator.operations.Operation;
-import ua.goit.calculator.provider.SuitableOperationProvider;
+import ua.goit.lib.exception.UnsupportedOperationException;
+import ua.goit.lib.exception.UnsupportedTypeException;
+import ua.goit.lib.operations.Operation;
+import ua.goit.lib.provider.SuitableOperationProvider;
 
 import java.util.ArrayList;
 import java.util.List;

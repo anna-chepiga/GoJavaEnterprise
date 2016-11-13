@@ -1,8 +1,8 @@
-package ua.goit.calculator.operations.addition;
+package ua.goit.lib.operations.subtraction;
 
-import ua.goit.calculator.operations.OperationAddition;
+import ua.goit.lib.operations.OperationSubtraction;
 
-public class OperationAdditionFloat implements OperationAddition {
+public class OperationSubtractionInteger implements OperationSubtraction {
     @Override
     public String getOperationSymbol() {
         return operationSymbol;
@@ -20,8 +20,8 @@ public class OperationAdditionFloat implements OperationAddition {
         }
 
         try {
-            Float.parseFloat(expression[0]);
-            Float.parseFloat(expression[2]);
+            Integer.parseInt(expression[0]);
+            Integer.parseInt(expression[2]);
         } catch (NumberFormatException e) {
             return false;
         }
@@ -30,10 +30,10 @@ public class OperationAdditionFloat implements OperationAddition {
     }
 
     @Override
-    public String calculate(String[] expression)  {
-        float a = Float.parseFloat(expression[0]);
-        float b = Float.parseFloat(expression[2]);
-        float result = a + b;
-        return String.format("%,.2f + %,.2f = %,.2f", a, b, result);
+    public String calculate(String[] expression) {
+        int a = Integer.parseInt(expression[0]);
+        int b = Integer.parseInt(expression[2]);
+        int result = a - b;
+        return String.format("%d - %d = %d", a, b, result);
     }
 }

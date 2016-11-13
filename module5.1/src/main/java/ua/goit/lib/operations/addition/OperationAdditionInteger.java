@@ -1,8 +1,8 @@
-package ua.goit.calculator.operations.subtraction;
+package ua.goit.lib.operations.addition;
 
-import ua.goit.calculator.operations.OperationSubtraction;
+import ua.goit.lib.operations.OperationAddition;
 
-public class OperationSubtractionInteger implements OperationSubtraction {
+public class OperationAdditionInteger implements OperationAddition {
     @Override
     public String getOperationSymbol() {
         return operationSymbol;
@@ -33,7 +33,7 @@ public class OperationSubtractionInteger implements OperationSubtraction {
     public String calculate(String[] expression) {
         int a = Integer.parseInt(expression[0]);
         int b = Integer.parseInt(expression[2]);
-        int result = a - b;
-        return String.format("%d - %d = %d", a, b, result);
+        int result = a + b;
+        return String.format("%d + %d = %d", a, b, result);
     }
 }

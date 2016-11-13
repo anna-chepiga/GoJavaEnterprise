@@ -1,6 +1,6 @@
-package ua.goit.calculator;
+package ua.goit.lib;
 
-import ua.goit.calculator.operations.Operation;
+import ua.goit.lib.operations.Operation;
 
 import java.util.List;
 

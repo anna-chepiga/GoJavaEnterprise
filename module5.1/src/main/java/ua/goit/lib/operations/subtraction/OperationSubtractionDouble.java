@@ -1,11 +1,11 @@
-package ua.goit.calculator.operations.unary;
+package ua.goit.lib.operations.subtraction;
 
-import ua.goit.calculator.operations.OperationSquareRoot;
+import ua.goit.lib.operations.OperationSubtraction;
 
-public class OperationSquareRootDouble implements OperationSquareRoot {
+public class OperationSubtractionDouble implements OperationSubtraction {
     @Override
     public boolean isOperationTypeCorrect(String[] expression) {
-        return expression[0].equals(operationSymbol);
+        return expression[1].equals(operationSymbol);
     }
 
     @Override
@@ -20,7 +20,8 @@ public class OperationSquareRootDouble implements OperationSquareRoot {
         }
 
         try {
-            Double.parseDouble(expression[1]);
+            Double.parseDouble(expression[0]);
+            Double.parseDouble(expression[2]);
         } catch (NumberFormatException e) {
             return false;
         }
@@ -30,9 +31,9 @@ public class OperationSquareRootDouble implements OperationSquareRoot {
 
     @Override
     public String calculate(String[] expression) {
-        double a = Double.parseDouble(expression[1]);
-
-        double result = Math.sqrt(a);
-        return String.format("Sqrt(%,.2f) = %,.2f", a, result);
+        double a = Double.parseDouble(expression[0]);
+        double b = Double.parseDouble(expression[2]);
+        double result = a - b;
+        return String.format("%,.2f - %,.2f = %,.2f", a, b, result);
     }
 }

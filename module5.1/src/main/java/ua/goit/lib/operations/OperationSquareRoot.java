@@ -1,4 +1,4 @@
-package ua.goit.calculator.operations;
+package ua.goit.lib.operations;
 
 public interface OperationSquareRoot extends Operation {
     String operationSymbol = "sqrt";
