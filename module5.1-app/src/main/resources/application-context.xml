@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util
+                           http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+    <bean class="ua.goit.calculator.StandardCalculator" id="calculator2" scope="prototype">
+        <constructor-arg ref="operationProvider2"/>
+        <property name="supportedOperations" ref="operations"/>
+    </bean>
+
+    <bean class="ua.goit.calculator.provider.ExtendedUnaryOperationProvider" id="operationProvider2" scope="prototype"/>
+
+    <util:list id="operations" value-type="ua.goit.calculator.operations.Operation">
+        <bean class="ua.goit.calculator.operations.addition.OperationAdditionDouble" id="additionDouble2"/>
+        <bean class="ua.goit.calculator.operations.subtraction.OperationSubtractionLong" id="subtractionLong2"/>
+        <bean class="ua.goit.calculator.operations.unary.OperationSquareRootDouble" id="squareRootDouble2"/>
+        <bean class="ua.goit.calculator.operations.subtraction.OperationSubtractionFloat" id="subtractionFloat2"/>
+        <bean class="ua.goit.app.operations.OperationAdditionDate" id="additionDate2"/>
+        <bean class="ua.goit.app.operations.OperationSubtractionDate" id="subtractionDate2"/>
+        <bean class="ua.goit.app.operations.OperationDivisionLong" id="divisionLong2"/>
+        <bean class="ua.goit.app.operations.OperationMultiplicationDouble" id="multiplicationDouble2"/>
+    </util:list>
+</beans>

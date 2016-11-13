@@ -1,0 +1,47 @@
+17:47:27.954 INFO  [main] ua.goit.app.config.LogAspect - Before execution of "calculate()" method, expression: 994 / 15
+17:47:27.961 INFO  [main] ua.goit.app.config.LogAspect - Before execution of "getSuitableOperation()" method
+17:47:27.962 INFO  [main] ua.goit.app.config.LogAspect - Supported operations: [ua.goit.app.operations.OperationAdditionDate@45d84a20, ua.goit.app.operations.OperationDivisionLong@52f27fbd, ua.goit.calculator.operations.subtraction.OperationSubtractionFloat@4c163e3, ua.goit.app.operations.OperationSubtractionDate@4a8355dd, ua.goit.calculator.operations.addition.OperationAdditionDouble@4d0d9fe7, ua.goit.calculator.operations.subtraction.OperationSubtractionLong@c430e6c, ua.goit.calculator.operations.unary.OperationSquareRootDouble@312aa7c, ua.goit.app.operations.OperationMultiplicationDouble@536f2a7e]
+17:47:27.971 INFO  [main] ua.goit.app.config.LogAspect - Operation symbol: +
+17:47:27.971 INFO  [main] ua.goit.app.config.LogAspect - Operation symbol: +
+17:47:27.972 INFO  [main] ua.goit.app.config.LogAspect - Operation symbol: /
+17:47:27.972 INFO  [main] ua.goit.app.config.LogAspect - Operation symbol: -
+17:47:27.972 INFO  [main] ua.goit.app.config.LogAspect - Operation symbol: -
+17:47:27.973 INFO  [main] ua.goit.app.config.LogAspect - Operation symbol: -
+17:47:27.973 INFO  [main] ua.goit.app.config.LogAspect - Operation symbol: -
+17:47:27.973 INFO  [main] ua.goit.app.config.LogAspect - Operation symbol: +
+17:47:27.973 INFO  [main] ua.goit.app.config.LogAspect - Operation symbol: +
+17:47:27.974 INFO  [main] ua.goit.app.config.LogAspect - Operation symbol: -
+17:47:27.974 INFO  [main] ua.goit.app.config.LogAspect - Operation symbol: -
+17:47:27.975 INFO  [main] ua.goit.app.config.LogAspect - Operation symbol: sqrt
+17:47:27.975 INFO  [main] ua.goit.app.config.LogAspect - Operation symbol: sqrt
+17:47:27.975 INFO  [main] ua.goit.app.config.LogAspect - Operation symbol: *
+17:47:27.976 INFO  [main] ua.goit.app.config.LogAspect - Operation symbol: *
+17:47:27.979 INFO  [main] ua.goit.app.config.LogAspect - Before execution of "isOperationSupported()" method, expression: [994, /, 15]
+17:47:27.979 INFO  [main] ua.goit.app.config.LogAspect - After execution of "isOperationSupported()" method, result: true
+17:47:27.980 INFO  [main] ua.goit.app.config.LogAspect - After execution of "getSuitableOperation()" method, suitable operation: ua.goit.app.operations.OperationDivisionLong@52f27fbd
+17:47:27.981 INFO  [main] ua.goit.app.config.LogAspect - LBefore execution of "calculate()" method
+17:47:27.983 INFO  [main] ua.goit.app.config.LogAspect - After execution of "calculate()" method, result: 994 / 15 = 66,27
+17:47:27.983 INFO  [main] ua.goit.app.config.LogAspect - After execution of "calculate()" method, result: 994 / 15 = 66,27
+17:47:36.339 INFO  [main] ua.goit.app.config.LogAspect - Before execution of "calculate()" method, expression: 01.01.2016 + 3996 days
+17:47:36.339 INFO  [main] ua.goit.app.config.LogAspect - Before execution of "getSuitableOperation()" method
+17:47:36.340 INFO  [main] ua.goit.app.config.LogAspect - Supported operations: [ua.goit.app.operations.OperationAdditionDate@45d84a20, ua.goit.app.operations.OperationDivisionLong@52f27fbd, ua.goit.calculator.operations.subtraction.OperationSubtractionFloat@4c163e3, ua.goit.app.operations.OperationSubtractionDate@4a8355dd, ua.goit.calculator.operations.addition.OperationAdditionDouble@4d0d9fe7, ua.goit.calculator.operations.subtraction.OperationSubtractionLong@c430e6c, ua.goit.calculator.operations.unary.OperationSquareRootDouble@312aa7c, ua.goit.app.operations.OperationMultiplicationDouble@536f2a7e]
+17:47:36.341 INFO  [main] ua.goit.app.config.LogAspect - Operation symbol: +
+17:47:36.342 INFO  [main] ua.goit.app.config.LogAspect - Operation symbol: /
+17:47:36.342 INFO  [main] ua.goit.app.config.LogAspect - Operation symbol: /
+17:47:36.342 INFO  [main] ua.goit.app.config.LogAspect - Operation symbol: -
+17:47:36.342 INFO  [main] ua.goit.app.config.LogAspect - Operation symbol: -
+17:47:36.343 INFO  [main] ua.goit.app.config.LogAspect - Operation symbol: -
+17:47:36.343 INFO  [main] ua.goit.app.config.LogAspect - Operation symbol: -
+17:47:36.343 INFO  [main] ua.goit.app.config.LogAspect - Operation symbol: +
+17:47:36.343 INFO  [main] ua.goit.app.config.LogAspect - Operation symbol: -
+17:47:36.343 INFO  [main] ua.goit.app.config.LogAspect - Operation symbol: -
+17:47:36.344 INFO  [main] ua.goit.app.config.LogAspect - Operation symbol: sqrt
+17:47:36.344 INFO  [main] ua.goit.app.config.LogAspect - Operation symbol: sqrt
+17:47:36.344 INFO  [main] ua.goit.app.config.LogAspect - Operation symbol: *
+17:47:36.344 INFO  [main] ua.goit.app.config.LogAspect - Operation symbol: *
+17:47:36.345 INFO  [main] ua.goit.app.config.LogAspect - Before execution of "isOperationSupported()" method, expression: [01.01.2016, +, 3996, days]
+17:47:36.347 INFO  [main] ua.goit.app.config.LogAspect - After execution of "isOperationSupported()" method, result: true
+17:47:36.347 INFO  [main] ua.goit.app.config.LogAspect - After execution of "getSuitableOperation()" method, suitable operation: ua.goit.app.operations.OperationAdditionDate@45d84a20
+17:47:36.347 INFO  [main] ua.goit.app.config.LogAspect - LBefore execution of "calculate()" method
+17:47:36.348 INFO  [main] ua.goit.app.config.LogAspect - After execution of "calculate()" method, result: 01.01.2016 + 3996 days = 10.12.2026
+17:47:36.348 INFO  [main] ua.goit.app.config.LogAspect - After execution of "calculate()" method, result: 01.01.2016 + 3996 days = 10.12.2026

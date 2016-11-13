@@ -2,6 +2,7 @@ package ua.goit.app.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Scope;
 import ua.goit.app.operations.OperationAdditionDate;
 import ua.goit.app.operations.OperationDivisionLong;
@@ -20,6 +21,7 @@ import ua.goit.calculator.provider.SuitableOperationProvider;
 import java.util.List;
 
 @Configuration
+@EnableAspectJAutoProxy
 @Scope("prototype")
 public class AppConfig {
     @Bean
@@ -78,5 +80,10 @@ public class AppConfig {
     @Bean
     public Operation multiplicationDouble() {
         return new OperationMultiplicationDouble();
+    }
+
+    @Bean
+    public LogAspect logAspect() {
+        return new LogAspect();
     }
 }
